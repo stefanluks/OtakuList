@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block page_style %}
+<style>
+    .form-control:focus {
+        color: #DC143C !important;
+        background-color: var(--bs-body-bg) !important;
+        border-color: #A52A2A !important;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem #A52A2A !important;
+    }
+</style>
+{% endblock %}
+{% block page %}
+<div class="w-100 rounded d-flex align-items-center justify-content-center" style="width: 100%; height: 100vh; color: #A52A2A; !important">
+    <form class="w-25 form-control py-3" action="." method="POST" style="box-shadow: 0 0 10px #A52A2A;">
+        <h3 class="fd-4" style="color: #A52A2A;">LOGIN</h3>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-outline-danger w-100" style = "background-color: #A52A2A; color: white;">Entrar</button>
+    </form>
+</div>
+{% endblock %}
+{% block page_script %}
+<script>
+    let labels = document.querySelectorAll("label");
+    labels.forEach(lb => { lb.className = "form-label", lb.style = "color: #A52A2A;"})
+    let inputs = document.querySelectorAll("input");
+    inputs.forEach(inp => { inp.className = "form-control", inp.style = "color: #A52A2A;"})
+</script>
+{% endblock %}

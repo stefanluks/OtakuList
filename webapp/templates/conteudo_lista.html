@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+{% block conteudo %}
+    <div class="w-100 border m-1 p-2 rounded fs-4 d-flex justify-content-between">
+        <a href="{% url 'Home' %}"><i class="bi bi-house-fill"></i></a>
+        <a href="{% url 'Home' %}"><i class="bi bi-plus-circle"> Adicionar Obra</i></a>
+    </div>
+    <div class="w-100 m-1 p-2 fs-4 d-flex bg bg-info fs-3">
+        Lista: {{lista_principal.titulo}}
+    </div>
+    <div class="w-100 border m-1 p-2 rounded fs-4 d-flex" style="flex-direction: column !important; ">
+        {% for anime in lista_principal.obras.all %}
+            <div class="border rounded my-2 p-2 d-flex justify-content-between w-100">
+                <text>{{anime}}</text>
+                <div class="acoes">
+                    <a class="bi bi-x btn-del text-light"></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

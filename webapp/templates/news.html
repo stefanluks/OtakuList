@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+{% block conteudo %}
+    <div class="w-100 border m-1 p-2 rounded fs-4 d-flex justify-content-between">
+        <a href="{% url 'Home' %}"><i class="bi bi-house-fill"></i></a>
+        {% comment %} <a href="{% url 'Home' %}"><i class="bi bi-plus-circle"> Adicionar Obra</i></a> {% endcomment %}
+    </div>
+    <div class="w-100 m-1 fs-4 d-flex bg bg-success text-light px-3 py-2 fs-3">
+        Atualização
+    </div>
+    <div class="w-100 border m-1 p-2 rounded fs-4 d-flex justify-content-between">
+        {{novidade}}
+    </div>
+{% endblock %}
